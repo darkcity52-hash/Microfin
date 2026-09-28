@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microfin del Sureste — Solicitud de Crédito</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --azul: #0A2E4D; --azul-medio: #1E6091; --oro: #D4AF37; --crema: #FDFBF7; --linea: #C9B896; --texto: #2D2D2D; }
+  body { font-family: 'Inter', sans-serif; background: #e8e4dc; color: var(--texto); line-height: 1.5; padding: 20px 0; }
+  .hoja { max-width: 800px; margin: 0 auto; background: var(--crema); padding: 50px 55px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border-top: 8px solid var(--azul); border-bottom: 8px solid var(--oro); position: relative; }
+  .hoja::before { content: ''; position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border: 1px solid var(--linea); pointer-events: none; opacity: 0.4; }
+  .encabezado { text-align: center; padding-bottom: 25px; border-bottom: 2px double var(--oro); margin-bottom: 30px; }
+  .logo-form { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
+  .logo-form svg { width: 60px; height: 60px; }
+  .logo-form h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--azul); letter-spacing: 1px; }
+  .logo-form h1 span { color: var(--azul-medio); font-size: 0.9rem; display: block; letter-spacing: 4px; }
+  .subtitulo-form { font-size: 0.85rem; color: var(--azul-medio); letter-spacing: 4px; text-transform: uppercase; margin-top: 8px; }
+  .lema-form { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--oro); margin-top: 5px; }
+  .seccion-form { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px dashed var(--linea); }
+  .seccion-form:last-of-type { border-bottom: none; }
+  .titulo-menu { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--azul); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+  .titulo-menu::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--oro), transparent); }
+  .titulo-menu .num { background: var(--azul); color: var(--oro); width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; }
+  .campo { display: flex; align-items: baseline; margin-bottom: 12px; gap: 8px; }
+  .campo label { font-size: 0.85rem; color: var(--azul); font-weight: 500; white-space: nowrap; min-width: 130px; }
+  .campo .linea { flex: 1; border-bottom: 1px solid #aaa; min-height: 22px; }
+  .fila-doble { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .fila-triple { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+  .referencia-box { background: #fff; border: 1px solid var(--linea); border-radius: 8px; padding: 15px 18px; margin-bottom: 15px; }
+  .referencia-box h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--oro); margin-bottom: 10px; letter-spacing: 1px; }
+  .buró-box { background: #f0f4f8; border-left: 4px solid var(--azul); border-radius: 6px; padding: 20px 22px; margin-top: 10px; }
+  .buró-box p { font-size: 0.78rem; text-align: justify; margin-bottom: 10px; color: #333; line-height: 1.6; }
+  .buró-box .destacado { font-weight: 700; color: var(--azul); }
+  .firmas { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; padding-top: 30px; border-top: 2px solid var(--azul); }
+  .firma { text-align: center; padding-top: 45px; border-top: 1px solid #333; }
+  .firma p { font-size: 0.8rem; color: var(--azul); font-weight: 600; letter-spacing: 1px; }
+  .pie-form { margin-top: 35px; padding-top: 20px; border-top: 2px double var(--oro); text-align: center; font-size: 0.72rem; color: #666; line-height: 1.7; }
+  .pie-form strong { color: var(--azul); }
+  .aviso-privacidad { margin-top: 20px; padding: 15px; background: #f9f7f2; border: 1px solid var(--linea); border-radius: 6px; font-size: 0.68rem; color: #555; text-align: justify; line-height: 1.6; }
+  .btn-imprimir { display: block; max-width: 800px; margin: 0 auto 20px; padding: 14px 30px; background: var(--azul); color: #fff; border: none; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; }
+  @media print { body { background: #fff; padding: 0; } .hoja { box-shadow: none; margin: 0; padding: 35px 40px; } .no-print { display: none !important; } }
+</style>
+</head>
+<body>
+
+<button class="btn-imprimir no-print" onclick="window.print()">🖨️ Guardar como PDF / Imprimir</button>
+
+<div class="hoja">
+
+  <div class="encabezado">
+    <div class="logo-form">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="45" r="35" fill="#0A2E4D"/>
+        <circle cx="50" cy="45" r="35" fill="none" stroke="#D4AF37" stroke-width="2"/>
+        <path d="M 30 60 L 30 35 L 50 50 L 70 35 L 70 60" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="50" cy="25" r="8" fill="#D4AF37" stroke="#0A2E4D" stroke-width="1.5"/>
+        <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0A2E4D">$</text>
+      </svg>
+      <div>
+        <h1>MICROFIN<span>DEL SURESTE</span></h1>
+      </div>
+    </div>
+    <p class="subtitulo-form">Solicitud de Crédito — Persona Física</p>
+    <p class="lema-form">"Crecimos contigo"</p>
+  </div>
+
+  <div class="fila-triple" style="margin-bottom:25px;">
+    <div class="campo"><label>Folio:</label><div class="linea"></div></div>
+    <div class="campo"><label>Fecha:</label><div class="linea"></div></div>
+    <div class="campo"><label>Sucursal:</label><div class="linea"></div></div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">1</span> Datos Generales del Solicitante</h2>
+    <div class="campo"><label>Nombre completo:</label><div class="linea"></div></div>
+    <div class="fila-doble">
+      <div class="campo"><label>Fecha nacimiento:</label><div class="linea"></div></div>
+      <div class="campo"><label>Edad:</label><div class="linea"></div></div>
+    </div>
+    <div class="fila-doble">
+      <div class="campo"><label>CURP:</label><div class="linea"></div></div>
+      <div class="campo"><label>RFC:</label><div class="linea"></div></div>
+    </div>
+    <div class="fila-doble">
+      <div class="campo"><label>Estado civil:</label><div class="linea"></div></div>
+      <div class="campo"><label>Género:</label><div class="linea"></div></div>
+    </div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">2</span> Domicilio Particular</h2>
+    <div class="campo"><label>Calle y número:</label><div class="linea"></div></div>
+    <div class="fila-triple">
+      <div class="campo"><label>Colonia:</label><div class="linea"></div></div>
+      <div class="campo"><label>C.P.:</label><div class="linea"></div></div>
+      <div class="campo"><label>Municipio:</label><div class="linea"></div></div>
+    </div>
+    <div class="fila-triple">
+      <div class="campo"><label>Estado:</label><div class="linea"></div></div>
+      <div class="campo"><label>Tel. casa:</label><div class="linea"></div></div>
+      <div class="campo"><label>Celular:</label><div class="linea"></div></div>
+    </div>
+    <div class="campo"><label>Correo electrónico:</label><div class="linea"></div></div>
+    <div class="campo"><label>Antigüedad:</label><div class="linea"></div></div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">3</span> Trabajo / Negocio</h2>
+    <div class="campo"><label>Nombre del negocio:</label><div class="linea"></div></div>
+    <div class="campo"><label>Giro o actividad:</label><div class="linea"></div></div>
+    <div class="campo"><label>Calle y número:</label><div class="linea"></div></div>
+    <div class="fila-triple">
+      <div class="campo"><label>Colonia:</label><div class="linea"></div></div>
+      <div class="campo"><label>C.P.:</label><div class="linea"></div></div>
+      <div class="campo"><label>Municipio:</label><div class="linea"></div></div>
+    </div>
+    <div class="fila-triple">
+      <div class="campo"><label>Tel. trabajo:</label><div class="linea"></div></div>
+      <div class="campo"><label>Antigüedad:</label><div class="linea"></div></div>
+      <div class="campo"><label>Ingreso mensual:</label><div class="linea"></div></div>
+    </div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">4</span> Referencias Personales (2)</h2>
+    <div class="referencia-box">
+      <h4>◆ REFERENCIA 1 (familiar)</h4>
+      <div class="campo"><label>Nombre completo:</label><div class="linea"></div></div>
+      <div class="fila-doble">
+        <div class="campo"><label>Parentesco:</label><div class="linea"></div></div>
+        <div class="campo"><label>Tiempo de conocerlo:</label><div class="linea"></div></div>
+      </div>
+      <div class="fila-doble">
+        <div class="campo"><label>Teléfono:</label><div class="linea"></div></div>
+        <div class="campo"><label>Celular:</label><div class="linea"></div></div>
+      </div>
+      <div class="campo"><label>Domicilio:</label><div class="linea"></div></div>
+    </div>
+    <div class="referencia-box">
+      <h4>◆ REFERENCIA 2 (amigo o vecino)</h4>
+      <div class="campo"><label>Nombre completo:</label><div class="linea"></div></div>
+      <div class="fila-doble">
+        <div class="campo"><label>Parentesco:</label><div class="linea"></div></div>
+        <div class="campo"><label>Tiempo de conocerlo:</label><div class="linea"></div></div>
+      </div>
+      <div class="fila-doble">
+        <div class="campo"><label>Teléfono:</label><div class="linea"></div></div>
+        <div class="campo"><label>Celular:</label><div class="linea"></div></div>
+      </div>
+      <div class="campo"><label>Domicilio:</label><div class="linea"></div></div>
+    </div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">5</span> Crédito Solicitado</h2>
+    <div class="fila-doble">
+      <div class="campo"><label>Monto solicitado:</label><div class="linea"></div></div>
+      <div class="campo"><label>Plazo deseado:</label><div class="linea"></div></div>
+    </div>
+    <div class="campo"><label>Destino del crédito:</label><div class="linea"></div></div>
+    <div class="campo"><label>¿Ha solicitado crédito antes?</label><div class="linea"></div></div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">6</span> Autorización Buró de Crédito</h2>
+    <div class="buró-box">
+      <p>Por este conducto <span class="destacado">autorizo expresamente a MICROFIN DEL SURESTE, S.A. de C.V., SOFOM E.N.R.</span>, para que por conducto de sus funcionarios facultados lleve a cabo investigaciones sobre mi comportamiento crediticio en las Sociedades de Información Crediticia que estime conveniente (Trans Unión de México, S.A. de C.V., S.I.C. y/o Dun & Bradstreet, S.A. de C.V., S.I.C.).</p>
+      <p>Así mismo, declaro que <span class="destacado">conozco la naturaleza y alcance de la información que se solicitará</span>, del uso que MICROFIN DEL SURESTE hará de tal información y de que ésta podrá realizar consultas periódicas de mi historial crediticio, consintiendo que esta autorización se encuentre vigente por un <span class="destacado">período de 3 años</span> contados a partir de la fecha de su expedición.</p>
+      <p>Estoy consciente y acepto que este documento quede bajo propiedad de MICROFIN DEL SURESTE y/o de la Sociedad de Información Crediticia consultada, para efectos de control y cumplimiento del <span class="destacado">artículo 28 de la Ley para Regular a las Sociedades de Información Crediticia</span>, mismo que señala que las sociedades sólo podrán proporcionar información a un Usuario cuando éste cuente con la autorización expresa del Cliente mediante su firma autógrafa.</p>
+      <div class="fila-doble" style="margin-top:15px;">
+        <div class="campo"><label>Fecha de firma:</label><div class="linea"></div></div>
+        <div class="campo"><label>Lugar:</label><div class="linea"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion-form">
+    <h2 class="titulo-menu"><span class="num">7</span> Declaración Bajo Protesta</h2>
+    <p style="font-size:0.82rem; text-align:justify; padding:10px 0; color:#444;">
+      Bajo formal protesta de decir verdad, manifiesto que toda la información proporcionada mediante el presente formato y el resto de la documentación exhibida es <strong>auténtica y comprobable</strong>. Del mismo modo, otorgo mi autorización para que personal designado por MICROFIN DEL SURESTE pueda acudir a cualquiera de los establecimientos de mi negocio para corroborar la veracidad de los datos proporcionados.
+    </p>
+  </div>
+
+  <div class="aviso-privacidad">
+    <strong>AVISO DE PRIVACIDAD SIMPLIFICADO:</strong> MICROFIN DEL SURESTE, S.A. de C.V., SOFOM E.N.R., con domicilio en Av. Central #456, Col. Centro, Tuxtla Gutiérrez, Chiapas, C.P. 29000, es responsable del tratamiento de sus datos personales. Para ejercer sus Derechos ARCO envíe solicitud a: <strong>surcreditslow@proton.me</strong>. Aviso integral disponible en oficinas y en <strong>microfin.vercel.app</strong>.
+  </div>
+
+  <div class="firmas">
+    <div class="firma"><p>NOMBRE Y FIRMA DEL SOLICITANTE</p></div>
+    <div class="firma"><p>NOMBRE Y FIRMA DEL ASESOR</p></div>
+  </div>
+
+  <div class="pie-form">
+    <strong>MICROFIN DEL SURESTE, S.A. de C.V., SOFOM E.N.R.</strong><br>
+    Av. Central #456, Col. Centro, Tuxtla Gutiérrez, Chiapas<br>
+    📞 WhatsApp: 999 563 3243 | 📞 Oficina: 566 488 8624<br>
+    ✉️ surcreditslow@proton.me | 🌐 microfin.vercel.app<br>
+    <em>Documento sin valor contractual hasta su autorización formal. CONDUSEF: 800 999 8080</em>
+  </div>
+
+</div>
+
+</body>
+</html>
